@@ -7,9 +7,10 @@ Provides a single CLI for the Microsoft Graph API.  It is primarily designed for
 > Only works with Microsoft Entra ID work/school tenants for now.
 
 ## Contents
-[Quick Start](#quick-start)
-[App Registration](#app-registration)
-[Environment Setup](#client-environment-setup)
+
+- [Quick Start](#quick-start)
+- [App Registration](#app-registration)
+- [Environment Setup](#client-environment-setup)
 
 ## App Registration
 

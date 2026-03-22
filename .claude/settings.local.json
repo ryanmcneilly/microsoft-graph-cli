@@ -1,0 +1,42 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:code.claude.com)",
+      "WebSearch",
+      "Bash(git:*)",
+      "Bash(cargo build:*)",
+      "Bash(rustup toolchain:*)",
+      "Bash(rustup show:*)",
+      "Bash(where:*)",
+      "Bash(ls \"/c/Program Files \\(x86\\)/Microsoft Visual Studio/\")",
+      "Bash(find '/c/Program Files \\(x86\\)/Microsoft Visual Studio' -name link.exe)",
+      "Bash(find '/c/Program Files \\(x86\\)/Microsoft Visual Studio/2019' -name link.exe)",
+      "Bash(ls:*)",
+      "Bash(cmd /c \"dir /b /s \\\\\"C:\\\\Program Files \\(x86\\)\\\\Microsoft Visual Studio\\\\2019\\\\Enterprise\\\\VC\\\\Tools\\\\MSVC\\\\14.29.30133\\\\bin\\\\Hostx64\\\\x64\\\\link.exe\\\\\" 2>nul\")",
+      "Bash(cmd /c \"where cl.exe 2>nul && where link.exe 2>nul\")",
+      "Bash(cmd /c \"dir /s /b \\\\\"C:\\\\Program Files\\\\Microsoft Visual Studio\\\\18\\\\Enterprise\\\\VC\\\\Tools\\\\MSVC\\\\\" 2>nul | findstr link.exe\")",
+      "Bash(cmd /c \"dir \\\\\"C:\\\\Program Files\\\\Microsoft Visual Studio\\\\18\\\\Enterprise\\\\VC\\\\Tools\\\\MSVC\\\\\" /b 2>nul\")",
+      "Bash(rustup target:*)",
+      "Bash(cmd /c \"dir /s /b \\\\\"C:\\\\Program Files \\(x86\\)\\\\Microsoft Visual Studio\\\\2019\\\\\" 2>nul | findstr /i \\\\\"Hostx64.*link.exe\\\\\"\")",
+      "Bash(cmd /c \"dir \\\\\"C:\\\\Program Files \\(x86\\)\\\\Microsoft Visual Studio\\\\2019\\\\Enterprise\\\\VC\\\\\" /b 2>nul\")",
+      "Bash(cmd /c \"dir \\\\\"C:\\\\Program Files\\\\Microsoft Visual Studio\\\\18\\\\Enterprise\\\\\" /b 2>nul\")",
+      "Bash(find '/c/Program Files \\(x86\\)/Microsoft Visual Studio/2019/Enterprise' -maxdepth 4 -name *.exe)",
+      "Bash(cmd /c \"dir \\\\\"C:\\\\Program Files \\(x86\\)\\\\Microsoft Visual Studio\\\\2019\\\\Enterprise\\\\VC\\\\Tools\\\\MSVC\\\\14.29.30133\\\\\" /b 2>nul\")",
+      "Bash(rustup component:*)",
+      "Read(//c/msys64/mingw64/bin/**)",
+      "Read(//c/ProgramData/chocolatey/bin/**)",
+      "Bash(find '/c/Program Files \\(x86\\)/Windows Kits/10/Lib' -name kernel32.lib)",
+      "Bash(find '/c/Program Files \\(x86\\)/Windows Kits' -name kernel32.lib)",
+      "Bash(cmd /c \"dir \\\\\"C:\\\\Program Files \\(x86\\)\\\\Microsoft Visual Studio\\\\2019\\\\Enterprise\\\\VC\\\\Tools\\\\MSVC\\\\14.29.30133\\\\\" /b 2>&1\")",
+      "Bash(cmd /c \"if exist \\\\\"C:\\\\Program Files \\(x86\\)\\\\Microsoft Visual Studio\\\\2019\\\\Enterprise\\\\VC\\\\Tools\\\\MSVC\\\\14.29.30133\\\\\" \\(echo EXISTS\\) else \\(echo NOT FOUND\\)\" 2>&1)",
+      "Bash(cmd /c dir \"C:\\\\Program Files \\(x86\\)\\\\Microsoft Visual Studio\\\\2019\\\\Enterprise\\\\VC\\\\Tools\\\\MSVC\\\\14.29.30133\" /b 2>&1)",
+      "Bash(powershell -Command \"Get-ChildItem 'C:\\\\Program Files \\(x86\\)\\\\Microsoft Visual Studio\\\\2019\\\\Enterprise\\\\VC\\\\Tools\\\\MSVC\\\\14.29.30133' -ErrorAction SilentlyContinue | Select-Object Name\")",
+      "Bash(powershell -Command \"Test-Path 'C:\\\\msys64'; Test-Path 'C:\\\\mingw64'; Test-Path 'C:\\\\tools\\\\msys64'; Get-Command gcc -ErrorAction SilentlyContinue | Select-Object Source\")",
+      "Bash(powershell -Command \"Get-ChildItem 'C:\\\\Program Files\\\\Microsoft Visual Studio\\\\18\\\\Enterprise\\\\VC' -ErrorAction SilentlyContinue | Select Name\")",
+      "Bash(powershell -Command \"Get-ChildItem 'C:\\\\Program Files \\(x86\\)\\\\Windows Kits\\\\8.1\\\\Lib' -Recurse -Filter 'kernel32.lib' -ErrorAction SilentlyContinue | Select FullName\")",
+      "Bash(powershell -Command \"Get-ChildItem -Path 'C:\\\\' -Filter 'kernel32.lib' -Recurse -ErrorAction SilentlyContinue -Depth 10 | Select FullName | Select-Object -First 5\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
