@@ -1,0 +1,69 @@
+{
+  "phase": "Phase 1 - Proof of Concept",
+  "tasks": [
+    {
+      "id": "T01",
+      "title": "Project scaffolding + --version",
+      "description": "Created main.rs with full clap command tree and mod.rs files. `msgraph --version` prints 0.1.0.",
+      "files": ["src/main.rs", "src/commands/mod.rs", "src/auth/mod.rs", "src/graph/mod.rs"],
+      "dependencies": [],
+      "status": "completed"
+    },
+    {
+      "id": "T02",
+      "title": "Config module",
+      "description": "Config struct resolves client_id from MSGRAPH_CLIENT_ID env var, then ~/.config/msgraph/config.toml. Manual TOML parsing — no toml crate.",
+      "files": ["src/config.rs"],
+      "dependencies": ["T01"],
+      "status": "completed"
+    },
+    {
+      "id": "T03",
+      "title": "Token store",
+      "description": "Keyring-based token storage using the `keyring` crate. Stores access_token, refresh_token, expires_at as JSON. Includes expiry check with 60-second buffer.",
+      "files": ["src/auth/token_store.rs"],
+      "dependencies": ["T01"],
+      "status": "completed"
+    },
+    {
+      "id": "T04",
+      "title": "Device code OAuth2 flow",
+      "description": "Full OAuth2 device code flow via ureq. Handles authorization_pending, slow_down, expired_token, and authorization_declined error codes.",
+      "files": ["src/auth/device_code.rs"],
+      "dependencies": ["T02", "T03"],
+      "status": "completed"
+    },
+    {
+      "id": "T05",
+      "title": "Auth login command",
+      "description": "handle_login() wires config + device_code + token_store. Prints success/error to stderr.",
+      "files": ["src/commands/auth.rs"],
+      "dependencies": ["T02", "T03", "T04"],
+      "status": "completed"
+    },
+    {
+      "id": "T06",
+      "title": "Graph client + mail API",
+      "description": "GraphClient::new() loads tokens and auto-refreshes if expired. graph::mail::list_messages() fetches top 20 emails with minimal field selection.",
+      "files": ["src/graph/client.rs", "src/graph/mail.rs"],
+      "dependencies": ["T02", "T03"],
+      "status": "completed"
+    },
+    {
+      "id": "T07",
+      "title": "Mail list command",
+      "description": "handle_mail_list() creates GraphClient, calls mail::list_messages, prints pretty JSON to stdout.",
+      "files": ["src/commands/mail.rs"],
+      "dependencies": ["T05", "T06"],
+      "status": "completed"
+    },
+    {
+      "id": "T08",
+      "title": "Auth logout + project docs",
+      "description": "handle_logout() clears keyring tokens. Created project-docs/plan.md and project-docs/tasks.json.",
+      "files": ["src/commands/auth.rs", "project-docs/plan.md", "project-docs/tasks.json"],
+      "dependencies": ["T03", "T05"],
+      "status": "completed"
+    }
+  ]
+}

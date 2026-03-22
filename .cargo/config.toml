@@ -1,0 +1,2 @@
+[target.x86_64-pc-windows-msvc]
+# Use default MSVC linker (link.exe found via vswhere)
